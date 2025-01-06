@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complaint Form</title>
+
+  <script type="module" src="firebaseConfig.js"></script>
+  <script type="module" src="complaint.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    select, input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .user-info {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .user-info h3 {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Submit a Complaint</h2>
+  <button id="logoutButton">Logout</button>
+
+  <!-- Display logged-in user information -->
+  <div class="user-info">
+    <h3 id="userName"></h3>
+    <h4 id="userDepartment"></h4>
+  </div>
+
+  <form id="complaintForm">
+    <label for="domain">Complaint Domain:</label>
+    <select id="domain" name="domain" required>
+      <option value="" disabled selected>Select a domain</option>
+      <option value="hostel">Hostel</option>
+      <option value="mgmt">Management</option>
+    </select>
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" placeholder="Enter the subject" required>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" rows="4" placeholder="Enter the description" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
